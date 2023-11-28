@@ -1,0 +1,30 @@
+body{
+    background: #161616; 
+    color: #fff;
+}
+.topProfile{
+    background: #1f1f1f !important;
+}
+
+.menu{
+    background: #1f1f1f !important;
+
+}
+
+.menu li a{
+    background: #3a3a3a !important;
+    transition: .4s;
+}
+
+.menu li a:hover{
+    background: #1b1b1b !important;
+}
+
+.historyBlock{
+    background: #1f1f1f !important;
+
+}
+
+.menu{
+    background: #1f1f1f;
+}
