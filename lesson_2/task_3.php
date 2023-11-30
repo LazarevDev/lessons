@@ -48,7 +48,7 @@ if(isset($_POST['submit'])){
 <body>
     <form action="" method="post">
         <input type="number" name="number_1" placeholder="Первое число">
-        <select class="operations" name="operation"> <!-- список с операндами -->
+        <select class="operations" name="operation">
             <option value='plus'>+</option>
             <option value='minus'>-</option>
             <option value="multiply">*</option>

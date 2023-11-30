@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тригонометрическая функция</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Тригонометрическая функция</h1>
+        <form id="inputForm">
+            <label for="function">Выберите функцию:</label>
+            <select id="function" name="function">
+                <option value="sin">sin</option>
+                <option value="cos">cos</option>
+                <option value="tan">tan</option>
+            </select>
+
+            <label for="start">Начальный угол:</label>
+            <input type="number" id="start" name="start" required>
+
+            <label for="end">Конечный угол:</label>
+            <input type="number" id="end" name="end" required>
+
+            <label for="step">Шаг:</label>
+            <input type="number" id="step" name="step" required>
+
+            <button type="button" onclick="calculate()">Вычислить</button>
+        </form>
+    </div>
+
+    <script>
+        function calculate() {
+            const functionType = document.getElementById('function').value;
+            const startAngle = parseFloat(document.getElementById('start').value);
+            const endAngle = parseFloat(document.getElementById('end').value);
+            const step = parseFloat(document.getElementById('step').value);
+
+            if (isNaN(startAngle) || isNaN(endAngle) || isNaN(step)) {
+                alert('Пожалуйста, введите числовые значения.');
+                return;
+            }
+
+            let table = '<table border="1">';
+            table += '<tr><th>Угол в градусах</th><th>Угол в радианах</th><th>' + functionType + '</th></tr>';
+
+            for (let angle = startAngle; angle <= endAngle; angle += step) {
+                const radians = (angle * Math.PI) / 180;
+                const result = Math[functionType](radians).toFixed(4);
+
+                table += `<tr><td>${angle}</td><td>${radians.toFixed(4)}</td><td>${result}</td></tr>`;
+            }
+
+            table += '</table>';
+
+            const newWindow = window.open();
+            newWindow.document.write('<html><head><title>Таблица</title></head><body>' + table + '</body></html>');
+        }
+
+    </script>
+</body>
+</html>

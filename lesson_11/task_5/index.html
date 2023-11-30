@@ -1,0 +1,93 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            padding: 0;
+            margin: 0 ;
+        }
+        .section{
+            display: flex;
+            justify-content: center;
+        }
+
+        .container{
+            width: 1320px;
+        }
+
+        .content form{
+            display: flex;
+            justify-content: center;
+        }
+
+        .select{
+            width: 220px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 8px;
+            margin-top: 20px;
+            outline: none;
+        }
+
+        .select:focus{
+            border: 1px solid #8260ff;
+        }
+
+        .photo{
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .photo img{
+            margin-top: 20px;
+            object-fit: cover;
+            width:  680px;
+            height: 440px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <section class="section">
+        <div class="container">
+            <div class="content">
+                <form action="" method="post">
+                    <select name="img" id="" class="select" onchange="display(this.value)">
+                        <option value="img1">Фото 1</option>
+                        <option value="img2">Фото 2</option>
+                        <option value="img3">Фото 3</option>
+                        <option value="img4">Фото 4</option>
+                        <option value="img5">Фото 5</option>
+                    </select>
+                </form>
+
+                <div class="photo">
+                    <img src="img/img1.jpeg" alt="" id="image">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        function display(str) {
+            let photo = {
+                            img1 : "img/img1.jpeg", 
+                            img2 : "img/img2.jpeg", 
+                            img3 : "img/img3.jpg", 
+                            img4 : "img/img4.jpeg", 
+                            img5 : "img/img5.jpg", 
+                        }
+
+            // console.log(photo[str]);
+            document.getElementById("image").src=photo[str];
+        }
+    </script>
+</body>
+</html>

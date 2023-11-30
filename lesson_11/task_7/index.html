@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+
+        section{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        #block{
+            width: 90px;
+            height: 90px;
+            border-radius: 20px;
+            background: #8260ff;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div class="container">
+            <div id="block"></div>
+        </div>
+    </section>
+
+    <script>
+        const block = document.getElementById('block');
+        const radius = 220;
+        let t = 0;
+    
+        function moveSquare() {
+          const x = radius * Math.cos(t);
+          const y = radius * Math.sin(t);
+    
+          block.style.transform = `translate(${x}px, ${y}px)`;
+    
+          t += 0.01;
+    
+          requestAnimationFrame(moveSquare);
+        }
+    
+        moveSquare();
+      </script>
+</body>
+</html>

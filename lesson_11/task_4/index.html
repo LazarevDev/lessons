@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOCUMENT</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+    <h2>Тригонометрические функции</h2>
+
+    <label for="angle">Угол: </label>
+    <input type="text" id="angle" placeholder="Угол"><br>
+
+    <label for="trigFunction">Функция: </label>
+    
+    <select id="trigFunction">
+        <option value="sin">Синус</option>
+        <option value="cos">Косинус</option>
+        <option value="tan">Тангенс</option>
+    </select><br>
+
+    <button onclick="calculateTrigonometry()">Вычислить</button>
+
+    <div id="result"></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Построение эллипса</title>
+</head>
+<body>
+    <h1>Построение эллипса</h1>
+
+    <label for="majorAxis">Горизонтальная полуось:</label>
+    <input type="number" id="majorAxis" placeholder="Введите размер большой полуоси">
+
+    <label for="minorAxis">Вертикальная полуось:</label>
+    <input type="number" id="minorAxis" placeholder="Введите размер малой полуоси">
+
+    <button onclick="drawEllipse()">Построить эллипс</button>
+
+    <div id="ellipseContainer" style="background-color: #8260ff; border-radius: 50%; position: absolute;"></div>
+
+    <script>
+        function drawEllipse() {
+            var majorAxis = document.getElementById("majorAxis").value;
+            var minorAxis = document.getElementById("minorAxis").value;
+
+            if (majorAxis <= 0 || minorAxis <= 0) {
+                alert("Пожалуйста, введите корректные значения для полуосей.");
+                return;
+            }
+
+            var ellipseContainer = document.getElementById("ellipseContainer");
+            var ellipse = document.getElementById("ellipse");
+
+            if (ellipse) {
+                ellipse.remove();
+            }
+
+            ellipse = document.createElement("div");
+            ellipse.id = "ellipse";
+            ellipse.style.width = majorAxis + "px";
+            ellipse.style.height = minorAxis + "px";
+
+            ellipseContainer.appendChild(ellipse);
+        }
+    </script>
+</body>
+</html>

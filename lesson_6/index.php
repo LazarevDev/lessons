@@ -45,6 +45,5 @@ if(isset($_POST['submit'])){
         <input type="submit" name="submit" value="Войти">
         <a href="register.php">Регистрация</a>
     </form>
-
 </body>
 </html>

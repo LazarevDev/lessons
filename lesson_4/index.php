@@ -58,9 +58,14 @@ if(isset($_GET['delete'])){
     <h2>Все книги</h2>
 
     <?php 
-        $queryBookDisplay = mysqli_query($db, "SELECT *, (SELECT COUNT(*) FROM `authors` WHERE `id_book` = books.id) as count FROM `books` ORDER BY `count` DESC");
+        $queryBookDisplay = mysqli_query($db, "SELECT *, (SELECT COUNT(*) FROM `authors` 
+                            WHERE `id_book` = books.id) as count FROM `books` ORDER BY `count` DESC");
+        
         while($row = mysqli_fetch_array($queryBookDisplay)){
-            echo "Название книги: ".$row['name']."<br> Кол-во авторов: ".$row['count']."<br> <a href='index.php?delete=".$row['id']."'>Удалить</a> <br><hr>";
+            echo "Название книги: ".$row['name']."<br> 
+                Кол-во авторов: ".$row['count']."<br> 
+                <a href='index.php?delete=".$row['id']."'>Удалить</a> <br>
+                <hr>";
         }    
     ?>
 </body>

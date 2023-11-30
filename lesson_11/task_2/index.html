@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+
+        .section{
+            display: flex;
+            justify-content: center;
+        }
+
+        .container{
+            width: 1320px;
+        }
+
+        .content{
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .caption {
+            text-align: center;
+            width: 100%;
+            font-size: 18px;
+            color: #333;
+            border-radius: 20px;
+            margin-top: 10px;
+        }
+
+        .caption.clicked {
+            color: #8260ff;
+        }
+
+        .image{
+            width: 680px;
+            height: 440px;
+            cursor: pointer;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    <section class="section">
+        <div class="container">
+            <div class="content">
+                <img id="image" class="image" src="img/img1.jpeg" alt="Изображение" onclick="changeImage()" />
+                <p id="caption" class="caption" onclick="changeColor()">Изображение 1</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function changeColor() {
+            var caption = document.getElementById("caption");
+            caption.classList.toggle("clicked");
+        }
+
+        function changeImage() {
+            var image = document.getElementById("image");
+            var caption = document.getElementById("caption");
+
+            if (image.src.endsWith("img1.jpeg")) {
+                image.src = "img/img2.jpeg";
+                caption.innerHTML = "Изображение 2";
+            } else {
+                image.src = "img/img1.jpeg";
+                caption.innerHTML = "Изображение 1";
+            }
+        }
+    </script>
+</body>
+</html>
